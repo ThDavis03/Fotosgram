@@ -1,0 +1,44 @@
+<ion-card>
+  <ion-item>
+    <ion-avatar aria-hidden="true" slot="start">
+      <img alt="Avatar de {{avatarUrl}}" [src]="avatarUrl" />
+    </ion-avatar>
+    <ion-label>
+      <strong>{{username}}</strong> <br>
+      <ion-note>{{location}}</ion-note>
+    </ion-label>
+    
+
+    <ion-button id="click-trigger{{username}}" color="none">
+      <ion-icon name="ellipsis-horizontal" slot="end" aria-hidden="true" color="light"></ion-icon>
+    </ion-button>
+    <ion-popover trigger="click-trigger{{username}}" triggerAction="click">
+      <ng-template>
+        <ion-content class="ion-padding">Hello {{username}}</ion-content>
+      </ng-template>
+    </ion-popover>
+
+  </ion-item>
+  <img alt="Publicacion {{imagenUrl}}" [src]="imagenUrl" />
+  <ion-item>
+    <ion-buttons slot="start">
+      <ion-icon size="large" [name]="liked" aria-hidden="true" (click)="cambiarEstado(0)" ></ion-icon>
+      <ion-icon size="large" name="chatbubble-outline" aria-hidden="true"></ion-icon>
+      <ion-icon size="large" name="paper-plane-outline" aria-hidden="true"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon size="large" [name]="saved" aria-hidden="true" (click)="cambiarEstado(1)"></ion-icon>
+    </ion-buttons>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <ion-note><strong>1.2 mil Likes</strong></ion-note>
+    </ion-label>
+  </ion-item>
+
+  <ion-label color="none">
+    <strong>{{username}}</strong><br>
+    <p>{{descripcion}}</p>
+  </ion-label>
+</ion-card>

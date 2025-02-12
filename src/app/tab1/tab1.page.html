@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Fotosgram
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-layout>
+
+    <ion-list>
+      <app-card-post *ngFor="let tarjeta of tarjetas" [username]="tarjeta.username" [location]="tarjeta.location"
+        [descripcion]="tarjeta.descripcion"
+        [avatarUrl]="tarjeta.avatarUrl" [createAt]="tarjeta.createAt"
+        [imagenUrl]="tarjeta.imagenUrl">
+      </app-card-post>
+    </ion-list>
+
+
+  </app-layout>
+</ion-content>
